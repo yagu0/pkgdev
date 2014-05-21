@@ -1,0 +1,5 @@
+# Export all R functions
+export (pkgdev.wipeAll,pkgdev.load,pkgdev.unload,pkgdev.clean,pkgdev.rtest,pkgdev.ctest,pkgdev.tocran,pkgdev.check)
+
+# Import all packages listed as Imports or Depends
+#import (methods)
