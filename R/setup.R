@@ -1,4 +1,4 @@
-# Setup a file structure under R_HOME/pkgdev/ to run later tests
+# Setup a file structure under R_HOME_USER/pkgdev/ to run later tests
 # @param atInstall Logical, TRUE if invoked at package installation
 .pkgdev.setup = function(reset=FALSE) {
 
@@ -7,7 +7,7 @@
         cat("*** WARNING: for pkgdev to work properly, you need to specify\n")
         cat("*** an environment variable R_HOME_USER in a .Renviron file.\n")
         cat("*** Standard choice is /home/userName/.R under UNIX systems,\n")
-        cat("*** or maybe C:/Users/userName/Documents/R under Windows")
+        cat("*** or maybe C:/Users/userName/Documents/R under Windows\n")
         stop("Please specify R_HOME_USER before using pkgdev")
     }
     

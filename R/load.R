@@ -18,7 +18,7 @@
         if (fileOrDir != forbiddenPath) {
             if (file.info(fileOrDir)$isdir) {
                 rFiles = list.files(fileOrDir, pattern="\\.[RrSsq]$",
-                         full.names=TRUE, recursive=TRUE)
+                    full.names=TRUE, recursive=TRUE)
                 # NOTE: potential unexported functions are not hidden;
                 # the developer is assumed to handle this
                 lapply(rFiles, source)
@@ -33,14 +33,15 @@
     
     # This file tells if the package is currently loaded
     pkgLoadFile = file.path(pkdev_path,"pkgs",pkgName,"loaded")
-    
+
     if (file.exists(file.path(path,"src"))) {
         # C code -- Warning: src/tests folder should not be listed
-        cFiles = c(
-            list.files( file.path(path,"src","adapters"), pattern="\\.[cChH]$",
-                full.names=TRUE, recursive=TRUE ),
-            list.files( file.path(path,"src","sources"), pattern="\\.[cChH]$",
-                full.names=TRUE, recursive=TRUE ))
+        cFiles = list.files( file.path(path,"src"), pattern="\\.[cChH]$",
+            full.names=TRUE, recursive=TRUE, no..=TRUE )
+        cFiles = lapply(cFiles, function(x) {
+            if (nchar(x)>=5 && substr(x,1,5)=="tests") return ("")
+            return (x)
+        })
         
         # Create folder R_HOME_USER/pkgdev/pkgs/pkgName/src (if not existing)
         dir.create(file.path(pkdev_path,"pkgs",pkgName,"src"), showWarnings=FALSE)
@@ -64,7 +65,7 @@
     }
     
     # Mark package as 'loaded'
-    writeLines("loaded",pkgLoadFile)
+    file.create(pkgLoadFile)
 }
 
 # Generate appropriate Makefile under R_HOME_USER/pkgdev/pkgs/pkgName/src

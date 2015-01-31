@@ -5,8 +5,9 @@ Date: 2013-XX-XX
 Title: Package development helper
 Author: Benjamin Auder
 Maintainer: Benjamin Auder <Benjamin.Auder@gmail.com>
-Depends: R (>= 2.15.1)
+Depends:
+    R (>= 2.15.1)
 Description: Allow nested subfolders in R/ directory,
-             and somewhat simplify testing process
+    and somewhat simplify testing process
 License: GPL (>= 3)
 LazyLoad: yes

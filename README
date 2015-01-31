@@ -1,1 +1,36 @@
-TODO
+|--------------
+| Basic usage :
+|--------------
+
+#Install
+R CMD INSTALL path/to/pkgdev/folder
+
+#Launch R
+R
+
+#load library
+library(pkgdev)
+
+#load some package
+pkgpath = "path/to/some/package"
+pkgdev.load(pkgpath)
+
+#test it (if unit tests defined under tests/ subfolders)
+pkgdev.rtest(pkgpath)
+pkgdev.rtest(pkgpath)
+
+#you can also run its functions
+foo(...)
+bar(...)
+
+#reload package to test modifications
+pkgdev.load(pkgpath)
+
+#...and so on
+
+#finally, unload package
+pkgdev.unload(pkgpath)
+
+---------------------------------
+
+Try also pkgTest/ testing package

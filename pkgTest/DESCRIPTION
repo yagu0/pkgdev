@@ -1,0 +1,11 @@
+Package: pkgTest
+Type: Package
+Version: 0.1.0
+Date: 2015-01-31
+Title: Just a Testing Package
+Author: Benjamin Auder
+Maintainer: Benjamin Auder <Benjamin.Auder@math.u-psud.fr>
+Depends: R (>= 2.14.1)
+Description: testing package for pkgdev
+License: GPL (>= 3)
+LazyLoad: yes
