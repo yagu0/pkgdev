@@ -1,5 +1,5 @@
 # Setup a file structure under R_HOME_USER/pkgdev/ to run later tests
-# @param atInstall Logical, TRUE if invoked at package installation
+# @param reset Logical, TRUE to wipe everything under R_HOME_USER/pkgdev folder
 .pkgdev.setup = function(reset=FALSE) {
 
     # environment variable R_HOME_USER must be set: everything starts here
