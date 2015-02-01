@@ -36,13 +36,12 @@
 
     if (file.exists(file.path(path,"src"))) {
         # C code -- Warning: src/tests folder should not be listed
-        cFiles = list.files( file.path(path,"src"), pattern="\\.[cChH]$",
-            full.names=TRUE, recursive=TRUE, no..=TRUE )
-        cFiles = lapply(cFiles, function(x) {
-            if (nchar(x)>=5 && substr(x,1,5)=="tests") return ("")
-            return (x)
-        })
-        
+        cFiles = c(
+        list.files(file.path(path,"src","sources"),pattern="\\.[cChH]$",
+            full.names=TRUE, recursive=TRUE, no..=TRUE),
+        list.files(file.path(path,"src","adapters"),pattern="\\.[cChH]$",
+            full.names=TRUE, recursive=TRUE, no..=TRUE))
+
         # Create folder R_HOME_USER/pkgdev/pkgs/pkgName/src (if not existing)
         dir.create(file.path(pkdev_path,"pkgs",pkgName,"src"), showWarnings=FALSE)
         

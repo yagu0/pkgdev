@@ -1,2 +1,3 @@
-/pkgTest/src/d.o
+/pkgTest/src/sources/d.o
+/pkgTest/src/tests/t.d.o
 /pkgTest/src/pkgTest.so

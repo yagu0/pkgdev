@@ -1,4 +1,4 @@
 # Export all user-level R functions
-export (a, b, c, .Last.lib)
+export (a, b, c)
 
 useDynLib(pkgTest)

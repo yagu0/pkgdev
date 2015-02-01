@@ -3,9 +3,9 @@
 
     # Initial step: list every potential unit test under path/R/tests.
     allFuncNames = .parseRunitTests(file.path(path,"R","tests"))
-    
+
     # Filter functions names matching prefix
-    funcNames = grep( paste("^test\\.",prefix,sep=''), allFuncNames, value=TRUE )
+    funcNames = grep( paste("^test_",prefix,sep=''), allFuncNames, value=TRUE )
     if (length(funcNames) == 0) return #shortcut: nothing to do...
     
     # If show==TRUE, display every potential test starting with prefix, and exit
@@ -58,15 +58,15 @@
         # If the file is not a source, skip
         if ( length( grep("\\.[RrSsq]$", fileName) ) == 0) next
         
-        # Every test function has a name starting with "test."
+        # Every test function has a name starting with "test_"
         matches = grep(
-            "^[ \t]*test\\.[a-zA-Z0-9_]*[ \t]*(=|<-)[ \t]*function.*",
+            "^[ \t]*test_[a-zA-Z0-9_]*[ \t]*(=|<-)[ \t]*function.*",
             scan(fileName, what="character", sep='\n', quiet=TRUE),
             value = TRUE)
         
         # We matched more to be 100% sure we got test functions, but need to strip now
         funcNames = c(funcNames, sub(
-            "^[ \t]*(test\\.[a-zA-Z0-9_]*)[ \t]*(=|<-)[ \t]*function.*",
+            "^[ \t]*(test_[a-zA-Z0-9_]*)[ \t]*(=|<-)[ \t]*function.*",
             "\\1",
             matches))
     }
