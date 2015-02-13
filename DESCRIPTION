@@ -1,13 +1,12 @@
 Package: pkgdev
 Type: Package
-Version: 0.0.1
-Date: 2013-XX-XX
+Version: 0.1.0
+Date: 2013-01-31
 Title: Package development helper
 Author: Benjamin Auder
 Maintainer: Benjamin Auder <Benjamin.Auder@gmail.com>
-Depends:
-    R (>= 2.15.1)
-Description: Allow nested subfolders in R/ directory,
-    and somewhat simplify testing process
+Depends: R (>= 2.15.1)
+Description: Allow nested subfolders in R/ directory, 
+             and also help testing process
 License: GPL (>= 3)
 LazyLoad: yes
