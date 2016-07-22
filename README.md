@@ -19,6 +19,6 @@
 	#...and so on
 
 	#finally, unload package
-	pkgdev.unload(pkgpath)</code></pre>
+	pkgdev.unload(pkgpath)
 
 Try also pkgTest/ testing package.
