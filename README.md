@@ -1,5 +1,9 @@
 # pkgdev: help to develop R packages
 
+## NOTE: (mostly) superseded by devtools
+
+However it was interesting to develop, and could still be used.
+
 ## Basic usage
 
 	#Install and load library
@@ -22,3 +26,7 @@
 	pkgdev.unload(pkgpath)
 
 Try also pkgTest/ testing package.
+
+-----
+
+Warning: old R package format - might require adjustments.
